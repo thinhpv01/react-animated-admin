@@ -15,6 +15,7 @@ import {
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { images } from "../assets/index";
+import Animate from "../components/common/Animate";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -84,9 +85,11 @@ const LoginPage = () => {
         >
           {/* logo */}
           <Box sx={{ textAlign: "center", p: 5 }}>
-            <img src={images.logo} alt="logo" height={60} />
-            {/* Logo */}
+            <Animate type="fade" delay={0.5}>
+              <img src={images.logo} alt="logo" height={60} />
+            </Animate>
           </Box>
+          {/* Logo */}
           {/* form */}
           <Box
             sx={{
@@ -101,53 +104,58 @@ const LoginPage = () => {
               "::-webkit-scrollbar": { display: "none" },
             }}
           >
-            <Box
-              component="form"
-              maxWidth={400}
-              width="100%"
-              onSubmit={onSignIn}
-            >
-              <Stack spacing={3}>
-                <TextField label="username" fullWidth />
-                <TextField label="password" type="password" fullWidth />
-                <Button
-                  type="submit"
-                  size="large"
-                  variant="contained"
-                  color="success"
-                >
-                  Sign In
-                </Button>
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <FormGroup>
-                    <FormControl>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Remember me"
-                      />
-                    </FormControl>
-                    <Typography color="error" fontWeight="hold">
-                      <Link to="#">Forget Password</Link>
-                    </Typography>
-                  </FormGroup>
+            <Animate type="fade" sx={{ maxWidth: 400, width: "100%" }}>
+              <Box
+                component="form"
+                maxWidth={400}
+                width="100%"
+                onSubmit={onSignIn}
+              >
+                <Stack spacing={3}>
+                  <TextField label="username" fullWidth />
+                  <TextField label="password" type="password" fullWidth />
+                  <Button
+                    type="submit"
+                    size="large"
+                    variant="contained"
+                    color="success"
+                  >
+                    Sign In
+                  </Button>
+                  <Stack
+                    direction="row"
+                    justifyContent="space-between"
+                    alignItems="center"
+                  >
+                    <FormGroup>
+                      <FormControl>
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="Remember me"
+                        />
+                      </FormControl>
+                      <Typography color="error" fontWeight="hold">
+                        <Link to="#">Forget Password</Link>
+                      </Typography>
+                    </FormGroup>
+                  </Stack>
                 </Stack>
-              </Stack>
-            </Box>
+              </Box>
+            </Animate>
           </Box>
+
           {/* form */}
           {/* footer */}
           <Box sx={{ textAlign: "center", p: 5, zIndex: 2 }}>
-            <Typography
-              display="inline"
-              fontWeight="bold"
-              sx={{ "& > a": { color: colors.red[900], ml: "5px" } }}
-            >
-              Don't have an account -<Link to="#">Register now</Link>
-            </Typography>
+            <Animate type="fade" delay={1}>
+              <Typography
+                display="inline"
+                fontWeight="bold"
+                sx={{ "& > a": { color: colors.red[900], ml: "5px" } }}
+              >
+                Don't have an account -<Link to="#">Register now</Link>
+              </Typography>
+            </Animate>
           </Box>
           {/* footer */}
           {/* Loading box */}
