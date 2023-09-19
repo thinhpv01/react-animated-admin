@@ -8,7 +8,7 @@ const sidebarWidth = 350;
 const MainLayout = () => {
   return (
     <Box display="flex">
-      <Sidebar />
+      <Sidebar sidebarWidth={sidebarWidth} />
       <Box
         component="main"
         sx={{
