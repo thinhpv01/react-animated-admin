@@ -151,7 +151,12 @@ const LoginPage = () => {
               <Typography
                 display="inline"
                 fontWeight="bold"
-                sx={{ "& > a": { color: colors.red[900], ml: "5px" } }}
+                sx={{
+                  "& > a": {
+                    color: colors.red[900],
+                    ml: "5px",
+                  },
+                }}
               >
                 Don't have an account -<Link to="#">Register now</Link>
               </Typography>
