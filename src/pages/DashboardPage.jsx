@@ -3,6 +3,7 @@ import React from "react";
 import SummaryGrid from "../components/common/SummaryGrid";
 import ToursData from "../components/common/ToursData";
 import Animate from "../components/common/Animate";
+import UserBookingCard from "../components/common/UserBookingCard";
 
 const DashboardPage = () => {
   return (
@@ -15,6 +16,11 @@ const DashboardPage = () => {
           <Grid item xs={12}>
             <Animate delay={1}>
               <ToursData />
+            </Animate>
+          </Grid>
+          <Grid item xs={12}>
+            <Animate delay={1.5}>
+              <UserBookingCard />
             </Animate>
           </Grid>
         </Grid>
